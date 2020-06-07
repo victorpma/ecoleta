@@ -1,9 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+
+import Home from "./pages/Home";
+
+import "./styles/main.scss";
 
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 }
 
 export default App;
