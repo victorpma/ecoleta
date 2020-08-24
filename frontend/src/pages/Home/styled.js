@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import logo from "../../assets/images/svg/home-background.svg";
+import { Link } from "react-router-dom";
 
 export const HomePage = styled.div`
   height: 100vh;
-  background: url(${logo}) no-repeat 600px bottom;
+  background: url(${logo}) no-repeat 800px bottom;
 `;
 
 export const Container = styled.div`
@@ -39,7 +40,7 @@ export const Main = styled.main`
     font-size: 5.4rem;
     line-height: 6.4rem;
     font-weight: 700;
-    color: #322153;
+    color: var(--title-color);
   }
 
   p {
@@ -77,9 +78,9 @@ export const Main = styled.main`
   }
 `;
 
-export const ButtonLogon = styled.a`
+export const ButtonLogon = styled(Link)`
   display: block;
-  background-color: #34cb79;
+  background-color: var(--color-primary);
   color: white;
   text-decoration: none;
   height: 50px;

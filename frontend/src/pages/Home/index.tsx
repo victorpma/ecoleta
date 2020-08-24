@@ -17,7 +17,7 @@ const Home = () => {
           <p>
             Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.
           </p>
-          <S.ButtonLogon href="/Cadastro">
+          <S.ButtonLogon to="create-point">
             <span>
               <FiLogIn />
             </span>
