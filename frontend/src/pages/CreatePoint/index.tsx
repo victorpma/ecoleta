@@ -13,6 +13,8 @@ import { toast, ToastContainer } from "react-toastify";
 
 import logo from "../../assets/images/svg/logo.svg";
 
+import Dropzone from "../../components/DropZone";
+
 import * as S from "./styled";
 
 interface Item {
@@ -45,6 +47,7 @@ const CreatePoint = () => {
     0,
     0,
   ]);
+  const [selectedFile, setSelectedFile] = useState<File>();
   const [selectedPosition, setSelectedPosition] = useState<[number, number]>([
     0,
     0,
@@ -52,6 +55,7 @@ const CreatePoint = () => {
   const [selectedUF, setSelectedUF] = useState<string>("0");
   const [selectedCity, setSelectedCity] = useState<string>("0");
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
+
   const history = useHistory();
 
   const toastOptions = {
@@ -124,8 +128,6 @@ const CreatePoint = () => {
   const { register, handleSubmit, errors } = useForm<Pointer>();
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log(data);
-
     try {
       const { name, email, whatsapp, uf, city } = data;
       const [latitude, longitude] = selectedPosition;
@@ -141,8 +143,6 @@ const CreatePoint = () => {
         city,
         items,
       };
-
-      console.log(pointer);
 
       await api.post("/points", pointer);
 
@@ -172,6 +172,9 @@ const CreatePoint = () => {
               Cadastro do <br />
               ponto de coleta
             </h1>
+
+            <Dropzone onFileUploaded={setSelectedFile} />
+
             <fieldset>
               <legend>
                 <h2>Dados</h2>

@@ -7,6 +7,10 @@ export const CreatePointPage = styled.div`
 
 export const Container = styled.div`
   padding: 0 100px;
+
+  @media (max-width: 560px) {
+    padding: 0;
+  }
 `;
 
 export const Header = styled.header`
@@ -17,6 +21,17 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 560px) {
+    flex-direction: column;
+    margin: 0;
+    padding: 30px;
+    background-color: var(--color-white);
+
+    img {
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 export const ButtonBack = styled(Link)`
@@ -47,6 +62,10 @@ export const Main = styled.main`
   max-width: 900px;
   padding: 40px;
   margin: 0 auto;
+
+  @media (max-width: 560px) {
+    padding: 0;
+  }
 `;
 
 export const CreatePoint = styled.form`
@@ -73,6 +92,11 @@ export const CreatePoint = styled.form`
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+
+      @media (max-width: 425px) {
+        flex-direction: column;
+        align-items: start;
+      }
 
       h2 {
         font-size: 2.4rem;
@@ -138,6 +162,10 @@ export const InputGroup = styled.div`
   div:not(:last-child) {
     margin-right: 10px;
   }
+
+  @media (max-width: 830px) {
+    flex-direction: column;
+  }
 `;
 
 export const GridItens = styled.ul`
@@ -146,6 +174,14 @@ export const GridItens = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+
+  @media (max-width: 830px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const Item = styled.li`
@@ -195,5 +231,9 @@ export const ButtonSubmit = styled.button`
 
   :hover {
     background-color: #2fb86e;
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
   }
 `;
