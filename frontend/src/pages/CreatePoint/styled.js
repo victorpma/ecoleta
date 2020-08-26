@@ -55,7 +55,7 @@ export const CreatePoint = styled.form`
   padding: 40px;
 
   h1 {
-    font-size: 3rem;
+    font-size: 3.6rem;
     line-height: 4rem;
     font-weight: 700;
     color: var(--title-color);
@@ -63,18 +63,20 @@ export const CreatePoint = styled.form`
 
   fieldset {
     border: none;
-    margin: 50px 0 50px 0;
+    min-inline-size: auto;
+    margin-top: 64px;
 
     legend {
       width: 100%;
+      margin-bottom: 10px;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
 
       h2 {
-        font-size: 2rem;
-        line-height: 3rem;
+        font-size: 2.4rem;
+        line-height: 3.4rem;
         font-weight: 700;
         color: var(--title-color);
       }
@@ -82,8 +84,16 @@ export const CreatePoint = styled.form`
       span {
         font-size: 1.4rem;
         line-height: 2.4rem;
+        font-weight: normal;
       }
     }
+  }
+
+  .leaflet-container {
+    width: 100%;
+    height: 360px;
+    border-radius: 8px;
+    margin: 20px 0 24px 0;
   }
 `;
 
@@ -97,15 +107,26 @@ export const InputBlock = styled.div`
   label {
     font-size: 1.4rem;
     line-height: 2.4rem;
+    margin-bottom: 8px;
   }
 
   input,
   select {
+    flex: 1;
     border: none;
+    border-radius: 8px;
     background-color: #f0f0f5;
-    padding: 12px;
-    border-radius: 5px;
-    font-size: 1.8rem;
+    padding: 16px 24px;
+    font-size: 1.6rem;
+    color: #6c6c80;
+
+    &::placeholder {
+      color: #a0a0b2;
+    }
+
+    &:active {
+      transform: traslateY(-1px);
+    }
   }
 `;
 
@@ -139,22 +160,30 @@ export const Item = styled.li`
 
   span {
     margin-top: 20px;
+    text-align: center;
   }
 
   :hover {
     background-color: #e1faec;
     border: 2px solid #34cb79;
   }
+
+  &.selected {
+    background-color: #e1faec;
+    border: 2px solid #34cb79;
+  }
 `;
 
-export const ButtonSubmit = styled.a`
-  height: 50px;
+export const ButtonSubmit = styled.button`
+  height: 56px;
+  width: 260px;
+  border: 0;
   border-radius: 8px;
   padding: 15px 30px;
   margin-top: 40px;
 
   background-color: var(--color-primary);
-  color: white;
+  color: #fff;
   text-decoration: none;
   align-self: flex-end;
 
